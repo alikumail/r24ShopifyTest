@@ -187,9 +187,14 @@
 </div>
 
 {% schema %}
+
 {
   "name": "Product Slider",
   "settings": [
+    {
+      "type": "header",
+      "content": "Slide Settings"
+    },
     {
       "type": "number",
       "id": "slides_per_view_mobile",
@@ -207,6 +212,10 @@
       "id": "slides_per_view_desktop",
       "label": "Slides per view (desktop)",
       "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Autoplay Settings"
     },
     {
       "type": "checkbox",
@@ -230,6 +239,38 @@
           "type": "product",
           "id": "product",
           "label": "Select Product"
+        },
+        {
+          "type": "select",
+          "id": "image_size",
+          "label": "Product Image Size",
+          "default": "medium",
+          "options": [
+            {
+              "value": "small",
+              "label": "Small"
+            },
+            {
+              "value": "medium",
+              "label": "Medium"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "show_price",
+          "label": "Show Product Price",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "description_limit",
+          "label": "Product Description Character Limit",
+          "default": 100
         }
       ]
     }
@@ -244,7 +285,18 @@
         "slides_per_view_desktop": 3,
         "autoplay": false,
         "autoplay_speed": 3000
-      }
+      },
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "image_size": "medium",
+            "show_price": true,
+            "description_limit": 100
+          }
+        }
+      ]
     },
     {
       "name": "Product Slider - Autoplay",
@@ -255,11 +307,21 @@
         "slides_per_view_desktop": 3,
         "autoplay": true,
         "autoplay_speed": 2000
-      }   
+      },
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "image_size": "medium",
+            "show_price": true,
+            "description_limit": 100
+          }
+        }
+      ]
     }
   ]
 }
-
 
   
 {% endschema %}
