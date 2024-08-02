@@ -207,6 +207,18 @@
       "id": "slides_per_view_desktop",
       "label": "Slides per view (desktop)",
       "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "autoplay_speed",
+      "label": "Autoplay Speed (ms)",
+      "default": 3000
     }
   ],
   "blocks": [
@@ -224,9 +236,46 @@
   ],
   "presets": [
     {
-      "name": "Product Slider",
-      "category": "Custom"
+      "name": "Product Slider - Default",
+      "category": "Custom",
+      "settings": {
+        "slides_per_view_mobile": 1,
+        "slides_per_view_tablet": 2,
+        "slides_per_view_desktop": 3,
+        "autoplay": false,
+        "autoplay_speed": 3000
+      },
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Product Slider - Autoplay",
+      "category": "Custom",
+      "settings": {
+        "slides_per_view_mobile": 1,
+        "slides_per_view_tablet": 2,
+        "slides_per_view_desktop": 3,
+        "autoplay": true,
+        "autoplay_speed": 2000
+      },
+      "blocks": [
+        {
+          "type": "product",
+          "settings": {
+            "product": ""
+          }
+        }
+      ]
     }
   ]
 }
+
+
+  
 {% endschema %}
